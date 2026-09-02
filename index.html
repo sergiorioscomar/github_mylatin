@@ -1,9 +1,10 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>MyLatinCloud</title>
+
   <style>
     :root {
       --bg: #0f172a;
@@ -11,11 +12,16 @@
       --text: #e5e7eb;
       --muted: #94a3b8;
       --accent: #60a5fa;
+      --success: #22c55e;
     }
-    * { box-sizing: border-box; }
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      font-family: system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
       background: linear-gradient(135deg, #0b1220, var(--bg));
       color: var(--text);
       min-height: 100vh;
@@ -23,40 +29,190 @@
       place-items: center;
       padding: 24px;
     }
+
     .card {
       width: min(700px, 100%);
       background: rgba(17, 24, 39, 0.9);
       border: 1px solid #1f2937;
       border-radius: 16px;
       padding: 32px;
-      box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.35);
       text-align: center;
     }
+
     h1 {
       margin: 0 0 12px;
       font-size: clamp(1.8rem, 4vw, 2.6rem);
       color: var(--accent);
     }
+
+    h2 {
+      margin: 30px 0 12px;
+      font-size: 1.35rem;
+      color: var(--text);
+    }
+
     p {
       margin: 0;
       color: var(--muted);
       font-size: 1.05rem;
+      line-height: 1.7;
     }
-    .contacto {
-      margin-top: 14px;
+
+    .descripcion {
+      margin-top: 16px;
+    }
+
+    .estado {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 22px;
+      padding: 8px 14px;
+      background: rgba(34, 197, 94, 0.12);
+      border: 1px solid rgba(34, 197, 94, 0.35);
+      border-radius: 999px;
+      color: #86efac;
       font-size: 0.95rem;
     }
+
+    .punto {
+      width: 9px;
+      height: 9px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 10px var(--success);
+    }
+
+    .caracteristicas {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 20px;
+    }
+
+    .caracteristica {
+      background: rgba(15, 23, 42, 0.7);
+      border: 1px solid #253044;
+      border-radius: 12px;
+      padding: 18px 12px;
+    }
+
+    .caracteristica strong {
+      display: block;
+      margin-bottom: 6px;
+      color: #bfdbfe;
+    }
+
+    .caracteristica span {
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .contacto {
+      margin-top: 28px;
+      font-size: 0.95rem;
+    }
+
     .contacto a {
       color: #93c5fd;
       text-decoration: none;
     }
+
+    .contacto a:hover {
+      text-decoration: underline;
+    }
+
+    .boton {
+      display: inline-block;
+      margin-top: 18px;
+      padding: 11px 22px;
+      background: var(--accent);
+      color: #0f172a;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: transform 0.2s, background 0.2s;
+    }
+
+    .boton:hover {
+      background: #93c5fd;
+      transform: translateY(-2px);
+    }
+
+    footer {
+      margin-top: 28px;
+      padding-top: 20px;
+      border-top: 1px solid #253044;
+      color: #64748b;
+      font-size: 0.85rem;
+    }
+
+    @media (max-width: 600px) {
+      .card {
+        padding: 24px 18px;
+      }
+
+      .caracteristicas {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
+
 <body>
   <main class="card">
-    <h1>Hola Mundo Desde MyLatinCloud</h1>
-    
-    <p class="contacto">Contacto: <a href="mailto:srios@latincloud.com">srios@latincloud.com</a></p>
+    <h1>Hola Mundo desde MyLatinCloud</h1>
+
+    <p class="descripcion">
+      Este sitio se encuentra alojado en la infraestructura de MyLatinCloud.
+      Si estás viendo esta página, significa que el servidor web fue configurado
+      correctamente y se encuentra listo para publicar aplicaciones, sitios web
+      y servicios en línea.
+    </p>
+
+    <div class="estado">
+      <span class="punto"></span>
+      Servidor funcionando correctamente
+    </div>
+
+    <h2>Infraestructura preparada para crecer</h2>
+
+    <p>
+      MyLatinCloud ofrece una plataforma confiable para alojar proyectos,
+      administrar servidores virtuales y desplegar soluciones adaptadas a las
+      necesidades de cada cliente.
+    </p>
+
+    <section class="caracteristicas">
+      <div class="caracteristica">
+        <strong>Alto rendimiento</strong>
+        <span>Recursos optimizados para sitios web y aplicaciones.</span>
+      </div>
+
+      <div class="caracteristica">
+        <strong>Disponibilidad</strong>
+        <span>Infraestructura preparada para mantener tus servicios operativos.</span>
+      </div>
+
+      <div class="caracteristica">
+        <strong>Soporte técnico</strong>
+        <span>Asistencia para la configuración y administración de servicios.</span>
+      </div>
+    </section>
+
+    <p class="contacto">
+      Para consultas técnicas o comerciales, podés comunicarte con:
+      <a href="mailto:srios@latincloud.com">srios@latincloud.com</a>
+    </p>
+
+    <a class="boton" href="mailto:srios@latincloud.com">
+      Contactar
+    </a>
+
+    <footer>
+      &copy; 2026 MyLatinCloud. Todos los derechos reservados.
+    </footer>
   </main>
 </body>
 </html>
